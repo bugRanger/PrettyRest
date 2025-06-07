@@ -19,8 +19,9 @@ impl RestClient {
         }
     }
 
-    pub fn header_builder(&mut self, headers_build_fn: fn(&mut RestHeaderBuilder)) {
+    pub fn header_builder(mut self, headers_build_fn: fn(&mut RestHeaderBuilder)) -> Self {
         self.header_build_fn = Some(headers_build_fn);
+        self
     }
 
     pub async fn call<R: Request<Response = T>, T: Response>(&self, request: R) -> Result<T::Data> {

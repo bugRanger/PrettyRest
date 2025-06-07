@@ -1,5 +1,5 @@
 [package]
-name = "pretty_rust"
+name = "pretty_rest"
 version = "0.1.0"
 edition = "2024"
 
@@ -9,3 +9,7 @@ serde = { version = "1.0", features = ["derive"] }
 serde_qs = "0.14"
 serde_json = "1.0"
 reqwest = { version = "0.12" }
+
+[dev-dependencies]
+serde-aux = "4.7"
+tokio = { version = "1.45", features = ["rt-multi-thread", "macros"] }

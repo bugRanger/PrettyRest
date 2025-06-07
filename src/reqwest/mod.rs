@@ -1,5 +1,5 @@
-use reqwest::Method;
 use crate::RequestMethod;
+use reqwest::Method;
 
 pub mod client;
 pub mod header;
