@@ -38,7 +38,7 @@ impl<T: DeserializeOwned + Debug> Response for ResponseMessage<T> {
         match self.code {
             SUCCESS_CODE => self.data.ok_or_else(|| anyhow::anyhow!("no data")),
             err_code => bail!(
-                    self.msg.unwrap_or_else(|| format!("Unknown error code: {err_code}"))
+                    self.error.unwrap_or_else(|| format!("Unknown error code: {err_code}"))
                 ),
         }
     }
